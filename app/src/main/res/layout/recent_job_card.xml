@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/card_background"
+    android:padding="16dp"
+    android:layout_marginTop="12dp">
+
+    <TextView
+        android:id="@+id/jobCompany"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google Inc"
+        android:textStyle="bold"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/jobLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bharatpur, Chitwan"
+        android:textColor="#777777"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/jobTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UI/UX Designer"
+        android:textColor="#2196F3"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/jobSalary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salary: 10,000–20,000"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/jobPostedDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="7 Days ago – 22 Applicants"
+        android:textColor="#999999"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/jobType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Full Time • Remote • Entry Level"
+        android:textSize="12sp"
+        android:textColor="#4CAF50"/>
+
+    <TextView
+        android:id="@+id/seeMorePopular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See More"
+        android:textColor="#2196F3"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="end"/>
+</LinearLayout>
