@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.jobportalapplication.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
@@ -19,6 +21,7 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Login button click
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,20 +44,21 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // SignUp text click
         binding.signupText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Example: Navigate to SignupActivity if you have it
                 Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(intent);
             }
         });
 
-        // forgetPassword click disabled because you removed that activity
+        // Forget password click
         binding.forgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // No action or toast here
+                Intent intent = new Intent(LoginActivity.this, ForgetPasswordActivity.class);
+                startActivity(intent);
             }
         });
     }
