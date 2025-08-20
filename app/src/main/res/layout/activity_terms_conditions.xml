@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Top Bar with Back Button -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="#1976D2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back_arrow"
+            app:tint="#FFFFFF"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terms And Conditions"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/termsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Terms and Conditions"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Section 1 -->
+            <TextView
+                android:id="@+id/section1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. Acceptance of Terms\nBy accessing or using this application, you agree to be bound by these terms and conditions."
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Section 2 -->
+            <TextView
+                android:id="@+id/section2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. Use of Service\nYou agree to use the app only for lawful purposes and in accordance with all applicable laws."
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Section 3 -->
+            <TextView
+                android:id="@+id/section3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. User Accounts\nYou are responsible for maintaining the confidentiality of your account information."
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Section 4 -->
+            <TextView
+                android:id="@+id/section4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4. Limitation of Liability\nWe are not liable for any damages arising from the use of this application."
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Section 5 -->
+            <TextView
+                android:id="@+id/section5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5. Modifications\nWe reserve the right to modify or terminate the app at any time without notice."
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Section 6 -->
+            <TextView
+                android:id="@+id/section6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6. Governing Law\nThese terms are governed by the laws of your country."
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="12dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

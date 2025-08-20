@@ -27,14 +27,13 @@
 
             <!-- Toggle: Job Seeker / Job Provider -->
             <LinearLayout
-                android:background="#FF9800"
+                android:background="#0CFF9800"
                 android:id="@+id/userTypeGroup1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="4dp"
                 android:layout_marginBottom="20dp"
-                android:backgroundTint="@color/cardview_dark_background"
 
                 >
 
@@ -44,7 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                      android:backgroundTint="@android:color/white"
-                    android:textColor="@color/black"
+                    android:textColor="#3F51B5"
                     android:text="Job Seeker"
                     android:padding="10dp" />
 
@@ -53,7 +52,7 @@
                     android:id="@+id/jobProviderBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@android:color/black"
+                    android:backgroundTint="@color/cardview_dark_background"
                     android:textColor="@color/white"
                     android:text="Job Provider"
                     android:padding="10dp" />

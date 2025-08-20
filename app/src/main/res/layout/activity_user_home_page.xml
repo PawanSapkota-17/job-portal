@@ -67,11 +67,12 @@
             android:src="@drawable/ic_filter" />
     </LinearLayout>
 
-    <!-- Scrollable Job Cards -->
+    <!-- Scrollable Content -->
     <ScrollView
         android:id="@+id/jobScrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/searchBarLayout"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,170 +83,224 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
+
+            <!-- Popular Jobs -->
             <TextView
-                android:id="@+id/popularJobsTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
                 android:text="Popular Jobs"
-                android:textColor="#000000"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="12dp" />
 
-            <!-- Job Card Example -->
-            <androidx.cardview.widget.CardView
+            <!-- Horizontal ScrollView for Popular Jobs -->
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                android:scrollbars="none">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@drawable/card_background"
-                    android:padding="16dp">
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/companyName"
-                        android:layout_width="match_parent"
+                    <!-- Popular Job 1 -->
+                    <LinearLayout
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:text="Google Inc"
-                        android:textStyle="bold"
-                        android:textSize="16sp" />
+                        android:background="@drawable/card_background"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:layout_marginEnd="12dp">
 
-                    <TextView
-                        android:id="@+id/jobLocation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Bharatpur, Chitwan"
-                        android:textColor="#777777"
-                        android:textSize="14sp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Google Inc" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Bharatpur, Chitwan" android:textColor="#777777" android:textSize="14sp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="UI/UX Designer" android:textColor="#2196F3" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Full Time • Remote • Entry Level" android:textColor="#4CAF50" android:textSize="12sp" />
 
-                    <TextView
-                        android:id="@+id/jobTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="UI/UX Designer"
-                        android:textColor="#2196F3"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Apply"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:backgroundTint="#2196F3"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="8dp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp" />
+                    </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/jobSalary"
-                        android:layout_width="match_parent"
+                    <!-- Popular Job 2 -->
+                    <LinearLayout
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:text="Salary: 10,000–20,000"
-                        android:textSize="14sp" />
+                        android:background="@drawable/card_background"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:layout_marginEnd="12dp">
 
-                    <TextView
-                        android:id="@+id/postedInfo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="7 Days ago – 22 Applicants"
-                        android:textColor="#999999"
-                        android:textSize="12sp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Meta" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Kathmandu, Nepal" android:textColor="#777777" android:textSize="14sp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Frontend Developer" android:textColor="#2196F3" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Salary: 25,000–40,000" android:textSize="14sp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Full Time • Onsite • Entry Level" android:textColor="#4CAF50" android:textSize="12sp" />
 
-                    <TextView
-                        android:id="@+id/jobTags"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Full Time • Remote • Entry Level"
-                        android:textSize="12sp"
-                        android:textColor="#4CAF50" />
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Apply"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:backgroundTint="#2196F3"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="8dp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp" />
+                    </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/seeMorePopular"
-                        android:layout_width="wrap_content"
+                    <!-- Popular Job 3 -->
+                    <LinearLayout
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:text="See More"
-                        android:textColor="#2196F3"
-                        android:textStyle="bold"
-                        android:textSize="14sp"
-                        android:layout_marginTop="8dp"
-                        android:layout_gravity="end" />
+                        android:background="@drawable/card_background"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:layout_marginEnd="12dp">
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Apple" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Biratnagar, Nepal" android:textColor="#777777" android:textSize="14sp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="iOS Developer" android:textColor="#2196F3" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Salary: 40,000–60,000" android:textSize="14sp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Full Time • Onsite • Level" android:textColor="#4CAF50" android:textSize="12sp" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Apply"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:backgroundTint="#2196F3"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="8dp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp" />
+                    </LinearLayout>
+
                 </LinearLayout>
+            </HorizontalScrollView>
 
-            </androidx.cardview.widget.CardView>
+            <!-- Recent Jobs -->
             <TextView
-                android:id="@+id/resrnt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Resent Jobs"
-                android:textColor="#000000"
+                android:text="Recent Jobs"
                 android:textSize="18sp"
-                android:textStyle="bold" />
-            <!-- Repeat more job cards here... -->
-            <androidx.cardview.widget.CardView
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Recent Job 1 -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                android:background="@drawable/card_background"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Amazon" android:textStyle="bold" android:textSize="16sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Pokhara, Nepal" android:textColor="#777777" android:textSize="14sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Backend Developer" android:textColor="#2196F3" android:textStyle="bold" android:textSize="16sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Salary: 30,000–50,000" android:textSize="14sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2 Days ago – 10 Applicants" android:textColor="#999999" android:textSize="12sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Full Time • Remote • Senior Level" android:textColor="#4CAF50" android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/card_background"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:text="Apply"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:backgroundTint="#2196F3"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="8dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp" />
+            </LinearLayout>
 
-                    <TextView
-                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Google Inc"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+            <!-- Repeat Recent Job 2 & 3 similarly with Apply button -->
+            <!-- Recent Job 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
 
-                    <TextView
-                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Bharatpur, Chitwan"
-                        android:textColor="#777777"
-                        android:textSize="14sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Microsoft" android:textStyle="bold" android:textSize="16sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Lalitpur, Nepal" android:textColor="#777777" android:textSize="14sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Software Engineer" android:textColor="#2196F3" android:textStyle="bold" android:textSize="16sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Salary: 20,000–35,000" android:textSize="14sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1 Day ago – 5 Applicants" android:textColor="#999999" android:textSize="12sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Full Time • Hybrid • Mid Level" android:textColor="#4CAF50" android:textSize="12sp" />
 
-                    <TextView
-                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="UI/UX Designer"
-                        android:textColor="#2196F3"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apply"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:backgroundTint="#2196F3"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="8dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp" />
+            </LinearLayout>
 
-                    <TextView
-                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Salary: 10,000–20,000"
-                        android:textSize="14sp" />
+            <!-- Recent Job 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
 
-                    <TextView
-                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="7 Days ago – 22 Applicants"
-                        android:textColor="#999999"
-                        android:textSize="12sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tesla" android:textStyle="bold" android:textSize="16sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Butwal, Nepal" android:textColor="#777777" android:textSize="14sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Data Scientist" android:textColor="#2196F3" android:textStyle="bold" android:textSize="16sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Salary: 50,000–80,000" android:textSize="14sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Today – 8 Applicants" android:textColor="#999999" android:textSize="12sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Full Time • Remote • Senior Level" android:textColor="#4CAF50" android:textSize="12sp" />
 
-                    <TextView
-                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Full Time • Remote • Entry Level"
-                        android:textColor="#4CAF50"
-                        android:textSize="12sp" />
-
-                    <TextView
-                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="8dp"
-                        android:text="See More"
-                        android:textColor="#2196F3"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apply"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:backgroundTint="#2196F3"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="8dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
@@ -258,7 +313,10 @@
         android:layout_marginBottom="4dp"
         android:background="@drawable/nav_background"
         app:menu="@menu/buttonnavmenu_user"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
         app:labelVisibilityMode="unlabeled"
+        app:itemIconSize="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

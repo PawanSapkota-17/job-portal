@@ -9,14 +9,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AboutUsActivity extends AppCompatActivity {
 
-    ImageView ivBack;
+    private ImageView ivBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aboutus); // your XML file name
 
-        ivBack = findViewById(R.id.ivBack);
+        // Corrected ID to match XML
+        ivBack = findViewById(R.id.backButton);
 
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override

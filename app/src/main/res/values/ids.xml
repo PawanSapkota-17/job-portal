@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tvSkills" type="id" />
+    <item name="tvPrivacyPolicy" type="id" />
+    <item name="backButtonPrivacy" type="id" />
+</resources>

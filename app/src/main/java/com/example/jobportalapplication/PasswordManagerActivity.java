@@ -1,30 +1,38 @@
 package com.example.jobportalapplication;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.jobportalapplication.databinding.ActivityPasswordManagerBinding;
+
 public class PasswordManagerActivity extends AppCompatActivity {
 
-    ImageView ivBack;
+    private ActivityPasswordManagerBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_password_manager); // this should match your XML file name
+        binding = ActivityPasswordManagerBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        ivBack = findViewById(R.id.ivBack);
+        // Back button functionality
+        binding.backButton.setOnClickListener(v -> finish());
 
-        ivBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Navigate to RecruiterProfileActivity
-                Intent intent = new Intent(PasswordManagerActivity.this, RecruiterProfileActivity.class);
-                startActivity(intent);
-                finish(); // closes the current activity
+        // Save button click
+        binding.btnSavePassword.setOnClickListener(v -> {
+            String current = binding.etCurrentPassword.getText().toString().trim();
+            String newPass = binding.etNewPassword.getText().toString().trim();
+            String confirm = binding.etConfirmPassword.getText().toString().trim();
+
+            if (current.isEmpty() || newPass.isEmpty() || confirm.isEmpty()) {
+                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+            } else if (!newPass.equals(confirm)) {
+                Toast.makeText(this, "New password and confirm password do not match", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Password updated successfully", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }

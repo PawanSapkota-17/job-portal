@@ -9,22 +9,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class HelpCenterActivity extends AppCompatActivity {
 
-    ImageView ivBack;
+    private ImageView ivBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help_center); // XML layout filename
+        setContentView(R.layout.activity_help_center); // Your XML layout
 
-        ivBack = findViewById(R.id.ivBack);
+        // Corrected ID to match XML
+        ivBack = findViewById(R.id.backButton);
 
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Navigate back to RecruiterProfileActivity
                 Intent intent = new Intent(HelpCenterActivity.this, RecruiterProfileActivity.class);
                 startActivity(intent);
-                finish(); // optional to prevent returning back here with the back button
+                finish(); // Prevent returning here with back button
             }
         });
+
+        // You can add other logic here later if needed
     }
 }

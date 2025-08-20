@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8F3FE"
+    android:padding="16dp">
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_back_arrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About Me"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        app:layout_constraintTop_toTopOf="@id/backButton"
+        app:layout_constraintStart_toEndOf="@id/backButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- Scrollable Form -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Profile Image -->
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_person"
+                android:scaleType="centerCrop"
+                android:background="@drawable/rounded_profile"
+                android:layout_marginTop="24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tap to change profile image"
+                android:textSize="12sp"
+                android:textColor="#777"
+                android:layout_marginTop="4dp"/>
+
+            <!-- Full Name -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Full Name"
+                android:textColor="#000"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"/>
+            <EditText
+                android:id="@+id/editFullName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Enter your full name"
+                android:padding="12dp"
+                android:background="@drawable/rounded_edittext"/>
+
+            <!-- Role / Position -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Role / Position"
+                android:textColor="#000"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"/>
+            <EditText
+                android:id="@+id/editRole"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Enter your role or position"
+                android:padding="12dp"
+                android:background="@drawable/rounded_edittext"/>
+
+            <!-- Email -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="#000"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"/>
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Enter your email"
+                android:inputType="textEmailAddress"
+                android:padding="12dp"
+                android:background="@drawable/rounded_edittext"/>
+
+            <!-- Phone -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone Number"
+                android:textColor="#000"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"/>
+            <EditText
+                android:id="@+id/editPhone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Enter phone number"
+                android:inputType="phone"
+                android:padding="12dp"
+                android:background="@drawable/rounded_edittext"/>
+
+            <!-- Short Bio -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Short Bio"
+                android:textColor="#000"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"/>
+            <EditText
+                android:id="@+id/editBio"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:hint="Write a short bio..."
+                android:padding="12dp"
+                android:background="@drawable/rounded_edittext"
+                android:gravity="top"/>
+
+            <!-- Save Button -->
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Save"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:backgroundTint="#2196F3"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

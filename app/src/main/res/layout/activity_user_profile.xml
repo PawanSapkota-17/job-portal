@@ -49,62 +49,82 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/profileImage"
+            <!-- Circular Profile Image -->
+            <FrameLayout
+                android:id="@+id/profileImageContainer"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/ic_person"
-                android:scaleType="centerCrop"
-                android:layout_marginEnd="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent">
 
+                <ImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_person"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/rounded_profile"/>
+
+                <!-- Edit Icon Overlay -->
+                <ImageView
+                    android:id="@+id/editImageIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="bottom|end"
+                    android:src="@drawable/ic_edit"
+                    android:background="@drawable/circle_bg_white"
+                    android:padding="2dp"/>
+            </FrameLayout>
+
+            <!-- Profile Info -->
             <LinearLayout
                 android:id="@+id/profileInfo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintStart_toEndOf="@id/profileImage"
-                app:layout_constraintTop_toTopOf="@id/profileImage"
-                app:layout_constraintBottom_toBottomOf="@id/profileImage"
-                app:layout_constraintEnd_toStartOf="@id/profileProgress">
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@id/profileImageContainer"
+                app:layout_constraintTop_toTopOf="@id/profileImageContainer"
+                app:layout_constraintBottom_toBottomOf="@id/profileImageContainer"
+                app:layout_constraintEnd_toEndOf="parent">
 
                 <TextView
+                    android:id="@+id/profileName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sarthak Sharma"
+                    android:text="User Name"
                     android:textStyle="bold"
                     android:textSize="16sp"
                     android:textColor="#000"/>
 
                 <TextView
+                    android:id="@+id/profileRole"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="UI/UX Designer"
+                    android:text="Role/Position"
                     android:textSize="14sp"
                     android:textColor="#777" />
+
+                <TextView
+                    android:id="@+id/profileEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textSize="14sp"
+                    android:textColor="#777"
+                    android:layout_marginTop="2dp"/>
+
+                <TextView
+                    android:id="@+id/profilePhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone"
+                    android:textSize="14sp"
+                    android:textColor="#777"/>
+
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/profileProgress"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:gravity="center"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent">
-
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="90%"-->
-<!--                    android:textColor="#0A0"-->
-<!--                    android:textSize="12sp"-->
-<!--                    android:textStyle="bold" />-->
-            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -134,8 +154,9 @@
                 android:textColor="#000"
                 android:layout_marginTop="8dp" />
 
-            <!-- Row Item -->
+            <!-- Row Items -->
             <LinearLayout
+                android:id="@+id/aboutMeRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -164,9 +185,8 @@
                     app:tint="#2196F3" />
             </LinearLayout>
 
-            <!-- Repeat for other rows -->
-
             <LinearLayout
+                android:id="@+id/passwordManagerRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -177,8 +197,8 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_lock"
-                    app:tint="#2196F3"
-                    android:layout_marginEnd="12dp" />
+                    android:layout_marginEnd="12dp"
+                    app:tint="#2196F3" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -192,21 +212,11 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/ic_arrow_right"
-                    app:tint="#2196F3"  />
+                    app:tint="#2196F3" />
             </LinearLayout>
 
-            <!-- Your Qualification -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Your Qualification"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="#000"
-                android:layout_marginTop="16dp" />
-
-            <!-- Education Row -->
             <LinearLayout
+                android:id="@+id/educationRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -217,8 +227,8 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_education"
-                    app:tint="#2196F3"
-                    android:layout_marginEnd="12dp" />
+                    android:layout_marginEnd="12dp"
+                    app:tint="#2196F3" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -235,9 +245,8 @@
                     app:tint="#2196F3" />
             </LinearLayout>
 
-            <!-- Skills and Job Experience (repeat format) -->
-
             <LinearLayout
+                android:id="@+id/skillsRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -248,8 +257,8 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_skills"
-                    app:tint="#2196F3"
-                    android:layout_marginEnd="12dp" />
+                    android:layout_marginEnd="12dp"
+                    app:tint="#2196F3" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -263,10 +272,11 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/ic_arrow_right"
-                    app:tint="#2196F3"  />
+                    app:tint="#2196F3" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/jobExpRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -277,14 +287,14 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_job"
-                    app:tint="#2196F3"
-                    android:layout_marginEnd="12dp" />
+                    android:layout_marginEnd="12dp"
+                    app:tint="#2196F3" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Job and Experince"
+                    android:text="Job and Experience"
                     android:textSize="15sp"
                     android:textColor="#000" />
 
@@ -292,7 +302,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/ic_arrow_right"
-                    app:tint="#2196F3"  />
+                    app:tint="#2196F3" />
             </LinearLayout>
 
             <!-- General Section -->
@@ -306,6 +316,7 @@
                 android:layout_marginTop="16dp" />
 
             <LinearLayout
+                android:id="@+id/settingsRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -316,8 +327,8 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_setting"
-                    app:tint="#2196F3"
-                    android:layout_marginEnd="12dp" />
+                    android:layout_marginEnd="12dp"
+                    app:tint="#2196F3" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -331,9 +342,11 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/ic_arrow_right"
-                    app:tint="#2196F3"  />
+                    app:tint="#2196F3" />
             </LinearLayout>
+
             <LinearLayout
+                android:id="@+id/privacyRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -344,14 +357,14 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_privacy"
-                    app:tint="#2196F3"
-                    android:layout_marginEnd="12dp" />
+                    android:layout_marginEnd="12dp"
+                    app:tint="#2196F3" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Privacy &amp; Policy"
+                    android:text="Privacy and Policy"
                     android:textSize="15sp"
                     android:textColor="#000" />
 
@@ -359,9 +372,11 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/ic_arrow_right"
-                    app:tint="#2196F3"  />
+                    app:tint="#2196F3" />
             </LinearLayout>
+
             <LinearLayout
+                android:id="@+id/helpRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -372,8 +387,8 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_help_center"
-                    app:tint="#2196F3"
-                    android:layout_marginEnd="12dp" />
+                    android:layout_marginEnd="12dp"
+                    app:tint="#2196F3" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -387,9 +402,11 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/ic_arrow_right"
-                    app:tint="#2196F3"  />
+                    app:tint="#2196F3" />
             </LinearLayout>
+
             <LinearLayout
+                android:id="@+id/logoutRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -400,8 +417,8 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_logout"
-                    app:tint="#2196F3"
-                    android:layout_marginEnd="12dp" />
+                    android:layout_marginEnd="12dp"
+                    app:tint="#2196F3" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -418,8 +435,6 @@
                     app:tint="#2196F3" />
             </LinearLayout>
 
-
-
         </LinearLayout>
     </ScrollView>
 
@@ -428,11 +443,14 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/nav_background"
+         android:background="@drawable/nav_background"
         app:menu="@menu/buttonnavmenu_user"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
         app:labelVisibilityMode="unlabeled"
+        app:itemIconSize="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

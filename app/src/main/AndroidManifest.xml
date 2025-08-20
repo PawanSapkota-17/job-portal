@@ -13,6 +13,48 @@
         android:theme="@style/Theme.JobPortalApplication"
         tools:targetApi="31">
         <activity
+            android:name=".RecruiterNotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserHelpCenterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserPrivacyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserSettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".JobExperinceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SkillsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EducationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserPasswordManagerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutMeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ApplyJobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".JobListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TermsConditionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PrivacyPolicyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
             android:name=".HelpCenterActivity"
             android:exported="false" />
         <activity
