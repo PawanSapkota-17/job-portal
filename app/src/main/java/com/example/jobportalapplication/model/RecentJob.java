@@ -4,9 +4,9 @@ public class RecentJob {
     private String jobTitle;
     private String companyName;
     private String location;
-    private String postedDate;       // e.g., "2 days ago"
-    private String jobType;          // e.g., "Full-time", "Part-time"
-    private double salary;           // e.g., 75000.0
+    private String postedDate;
+    private String jobType;
+    private double salary;
 
     public RecentJob(String jobTitle, String companyName, String location, String postedDate, String jobType, double salary) {
         this.jobTitle = jobTitle;

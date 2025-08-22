@@ -19,6 +19,9 @@ public class RecruiterSignupActivity extends AppCompatActivity {
         binding = ActivityRecruiterSignupBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Back Arrow click → go back to previous screen
+        binding.backArrow.setOnClickListener(v -> onBackPressed());
+
         // If user clicks "Job Seeker" button, navigate to SignupActivity
         binding.jobSeekerBtnBtn.setOnClickListener(v -> {
             startActivity(new Intent(this, SignupActivity.class));
@@ -28,7 +31,7 @@ public class RecruiterSignupActivity extends AppCompatActivity {
         // Sign Up button click listener
         binding.SignUpBtn.setOnClickListener(v -> {
             String companyName = binding.companyFullName.getText().toString().trim();
-            String companyId = binding.idField.getText().toString().trim();
+            String username = binding.recruiterUsernameField.getText().toString().trim();
             String email = binding.email.getText().toString().trim();
             String password = binding.password.getText().toString().trim();
             String phone = binding.phone.getText().toString().trim();
@@ -40,8 +43,8 @@ public class RecruiterSignupActivity extends AppCompatActivity {
                 return;
             }
 
-            if (TextUtils.isEmpty(companyId)) {
-                Toast.makeText(this, "Enter company ID", Toast.LENGTH_SHORT).show();
+            if (TextUtils.isEmpty(username)) {
+                Toast.makeText(this, "Enter company Username", Toast.LENGTH_SHORT).show();
                 return;
             }
 

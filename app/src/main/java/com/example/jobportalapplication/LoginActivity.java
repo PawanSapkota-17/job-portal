@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(password)) {
                     // Navigate to RecruiterHomePageActivity
-                    Intent intent = new Intent(LoginActivity.this, RecruiterHomePageActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, UserHomePageActivity.class);
                     startActivity(intent);
                     finish();
                 } else {

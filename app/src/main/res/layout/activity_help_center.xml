@@ -2,39 +2,44 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E3F6FD"
-    tools:context=".HelpCenterActivity">
+    android:background="#E3F6FD">
+
+    <!-- Top Guideline -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
 
     <!-- Back Button -->
     <ImageView
         android:id="@+id/backButton"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:src="@drawable/ic_back_arrow"
         android:contentDescription="Back"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/topGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"/>
 
     <!-- Title -->
     <TextView
         android:id="@+id/titleHelpCenter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:text="Help Center"
-        android:textColor="#000"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@id/topGuideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"/>
 
-    <!-- Scrollable Help Topics -->
+    <!-- ScrollView for content -->
     <ScrollView
         android:id="@+id/scrollViewHelp"
         android:layout_width="0dp"
@@ -52,23 +57,13 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- FAQ Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Frequently Asked Questions"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="#000"
-                android:layout_marginBottom="12dp"/>
-
             <!-- FAQ Item 1 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="12dp"
                 android:orientation="vertical"
                 android:background="@drawable/edittext_bg"
+                android:padding="12dp"
                 android:layout_marginBottom="10dp">
 
                 <TextView
@@ -76,8 +71,9 @@
                     android:layout_height="wrap_content"
                     android:text="How do I post a job?"
                     android:textSize="16sp"
-                    android:textColor="#000"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -91,9 +87,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="12dp"
                 android:orientation="vertical"
                 android:background="@drawable/edittext_bg"
+                android:padding="12dp"
                 android:layout_marginBottom="10dp">
 
                 <TextView
@@ -101,8 +97,9 @@
                     android:layout_height="wrap_content"
                     android:text="How do I change my profile details?"
                     android:textSize="16sp"
-                    android:textColor="#000"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -116,9 +113,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="12dp"
                 android:orientation="vertical"
                 android:background="@drawable/edittext_bg"
+                android:padding="12dp"
                 android:layout_marginBottom="10dp">
 
                 <TextView
@@ -126,8 +123,9 @@
                     android:layout_height="wrap_content"
                     android:text="How do I manage applicants?"
                     android:textSize="16sp"
-                    android:textColor="#000"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -141,9 +139,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="12dp"
                 android:orientation="vertical"
                 android:background="@drawable/edittext_bg"
+                android:padding="12dp"
                 android:layout_marginBottom="10dp">
 
                 <TextView
@@ -151,8 +149,9 @@
                     android:layout_height="wrap_content"
                     android:text="How do I reset my password?"
                     android:textSize="16sp"
-                    android:textColor="#000"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -163,21 +162,11 @@
             </LinearLayout>
 
             <!-- Contact Support Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Contact Support"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="#000"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="12dp"/>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="12dp"
                 android:orientation="vertical"
+                android:padding="12dp"
                 android:background="@drawable/edittext_bg"
                 android:layout_marginBottom="10dp">
 
@@ -186,8 +175,9 @@
                     android:layout_height="wrap_content"
                     android:text="Email Support"
                     android:textSize="16sp"
-                    android:textColor="#000"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -200,8 +190,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="12dp"
                 android:orientation="vertical"
+                android:padding="12dp"
                 android:background="@drawable/edittext_bg"
                 android:layout_marginBottom="10dp">
 
@@ -210,8 +200,9 @@
                     android:layout_height="wrap_content"
                     android:text="Phone Support"
                     android:textSize="16sp"
-                    android:textColor="#000"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -223,4 +214,5 @@
 
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

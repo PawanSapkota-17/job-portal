@@ -1,11 +1,13 @@
 package com.example.jobportalapplication;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -16,6 +18,7 @@ public class JobExperinceActivity extends AppCompatActivity {
     TextView tvJobTitle, tvCompany, tvDuration, tvResponsibilities;
     Button btnEditJob;
     SharedPreferences sharedPreferences;
+    ImageView backArrow; // Added for back button
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +30,19 @@ public class JobExperinceActivity extends AppCompatActivity {
         tvDuration = findViewById(R.id.tvDuration);
         tvResponsibilities = findViewById(R.id.tvResponsibilities);
         btnEditJob = findViewById(R.id.btnEditJob);
+        backArrow = findViewById(R.id.backArrow); // Link to XML
 
         sharedPreferences = getSharedPreferences("UserProfile", MODE_PRIVATE);
         loadData();
 
         btnEditJob.setOnClickListener(v -> showEditDialog());
+
+        // Back button click → navigate to UserProfileActivity
+        backArrow.setOnClickListener(v -> {
+            Intent intent = new Intent(JobExperinceActivity.this, UserProfileActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
 
     private void loadData() {

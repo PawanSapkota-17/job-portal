@@ -19,6 +19,13 @@ public class SignupActivity extends AppCompatActivity {
         binding = ActivitySignupBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Back arrow click listener
+        binding.backArrow.setOnClickListener(v -> {
+            Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
         // Navigate to RecruiterSignupActivity when jobProviderBtn clicked
         binding.jobProviderBtn.setOnClickListener(v -> {
             startActivity(new Intent(SignupActivity.this, RecruiterSignupActivity.class));
@@ -27,15 +34,15 @@ public class SignupActivity extends AppCompatActivity {
 
         // Sign Up button click listener with validation
         binding.SignUpBtn.setOnClickListener(v -> {
-            String id = binding.idField.getText().toString().trim();
+            String username = binding.usernameField.getText().toString().trim(); // ✅ FIXED
             String fullName = binding.fullName.getText().toString().trim();
             String email = binding.email.getText().toString().trim();
             String password = binding.password.getText().toString().trim();
             String phone = binding.phone.getText().toString().trim();
             String skills = binding.skills.getText().toString().trim();
 
-            if (TextUtils.isEmpty(id)) {
-                Toast.makeText(this, "Please enter your ID", Toast.LENGTH_SHORT).show();
+            if (TextUtils.isEmpty(username)) {
+                Toast.makeText(this, "Please enter your Username", Toast.LENGTH_SHORT).show();
                 return;
             }
 
