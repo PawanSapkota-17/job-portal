@@ -46,37 +46,37 @@
                 android:textSize="16sp" />
 
             <!-- 🔍 Search Bar with 🧰 Filter Button -->
-            <LinearLayout
-                android:id="@+id/searchFilterRow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="16dp"
-                android:gravity="center_vertical">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/searchFilterRow"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:gravity="center_vertical">-->
 
-                <EditText
-                    android:id="@+id/searchBar"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:hint="Search for Jobs"
-                    android:drawableStart="@drawable/ic_search"
-                    android:padding="12dp"
-                    android:textColorHint="#999999"
-                    android:background="@drawable/edit_text_background" />
+<!--                <EditText-->
+<!--                    android:id="@+id/searchBar"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:hint="Search for Jobs"-->
+<!--                    android:drawableStart="@drawable/ic_search"-->
+<!--                    android:padding="12dp"-->
+<!--                    android:textColorHint="#999999"-->
+<!--                    android:background="@drawable/edit_text_background" />-->
 
-                <ImageButton
-                    android:id="@+id/filterButton"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/edit_text_background"
-                    android:padding="12dp"
-                    android:src="@drawable/ic_filter"
-                    android:contentDescription="Filter"
-                    android:scaleType="centerInside"
-                    app:tint="#555555" />
-            </LinearLayout>
+<!--&lt;!&ndash;                <ImageButton&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/filterButton"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="48dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="48dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginStart="8dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:background="@drawable/edit_text_background"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:padding="12dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:src="@drawable/ic_filter"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:contentDescription="Filter"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:scaleType="centerInside"&ndash;&gt;-->
+<!--&lt;!&ndash;                    app:tint="#555555" />&ndash;&gt;-->
+<!--            </LinearLayout>-->
 
             <!-- Popular Jobs Section -->
             <TextView

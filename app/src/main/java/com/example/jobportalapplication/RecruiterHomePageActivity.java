@@ -54,9 +54,7 @@ public class RecruiterHomePageActivity extends AppCompatActivity {
         setActiveNavIcon(R.id.nav_home);
 
         // 🔹 Filter button
-        binding.filterButton.setOnClickListener(v -> {
-            startActivity(new Intent(this, SearchFilterActivity.class));
-        });
+       
 
         // 🔹 Demo data for Popular Jobs
         List<PopularJob> popularJobs = new ArrayList<>();

@@ -88,7 +88,7 @@ public class PostJobActivity extends AppCompatActivity {
                 saveJobToPreferences(title, company, location, type, salary, model, level);
 
                 // 🟢 Navigate to JobListActivity
-                Intent intent = new Intent(PostJobActivity.this, JobListActivity.class);
+                Intent intent = new Intent(PostJobActivity.this, RecruiterHomePageActivity.class);
                 startActivity(intent);
                 finish();
             }
