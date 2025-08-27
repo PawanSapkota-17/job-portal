@@ -1,20 +1,30 @@
 package com.example.jobportalapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.example.jobportalapplication.databinding.ActivityUserHelpCenterBinding;
 
 public class UserHelpCenterActivity extends AppCompatActivity {
+
+    private ActivityUserHelpCenterBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_user_help_center);
+
+        // Initialize ViewBinding
+        binding = ActivityUserHelpCenterBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+
+        binding.backButton.setOnClickListener(v -> {
+            Intent intent = new Intent(UserHelpCenterActivity.this, UserProfileActivity.class);
+            startActivity(intent);
+            finish();
+        });
 
     }
 }

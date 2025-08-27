@@ -67,7 +67,7 @@
             android:name=".PasswordManagerActivity"
             android:exported="false" />
         <activity
-            android:name=".AboutusActivity"
+            android:name=".AboutUsActivity"
             android:exported="false" />
         <activity
             android:name=".RecruiterProfileActivity"

@@ -2,63 +2,91 @@ package com.example.jobportalapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.jobportalapplication.databinding.ActivitySearchFilterBinding;
-
 public class SearchFilterActivity extends AppCompatActivity {
 
-    ActivitySearchFilterBinding binding;
+    private ImageView backButton;
+    private EditText etLocation;
+    private Spinner spinnerSort, spinnerNature;
+    private Button resetFilterButton, applyFilterButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySearchFilterBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_search_filter);
 
-        // 🧩 Populate dropdowns
-        setupSpinner(binding.spinnerLocation, new String[]{"Kathmandu", "Chitwan", "Pokhera"});
-        setupSpinner(binding.spinnerSort, new String[]{"Most Recent", "Highest Salary", "Popular"});
-        setupSpinner(binding.spinnerNature, new String[]{"Full Time", "Part Time", "Remote"});
+        // Views
+        backButton = findViewById(R.id.backButton);
+        etLocation = findViewById(R.id.etLocation);
+        spinnerSort = findViewById(R.id.spinnerSort);
+        spinnerNature = findViewById(R.id.spinnerNature);
+        resetFilterButton = findViewById(R.id.resetFilterButton);
+        applyFilterButton = findViewById(R.id.applyFilterButton);
 
-        // 🔙 Back navigation
-        binding.backButton.setOnClickListener(v -> {
-            Intent intent = new Intent(SearchFilterActivity.this, RecruiterHomePageActivity.class);
+        // Back button -> navigate to previous screen
+        backButton.setOnClickListener(v -> finish());
+
+        // Sort By options (without Highest Salary)
+        String[] sortOptions = {"Recent", "Popular"};
+        ArrayAdapter<String> sortAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, sortOptions);
+        sortAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerSort.setAdapter(sortAdapter);
+
+        // Job Nature options
+        String[] natureOptions = {"Full Time", "Part Time", "Remote", "Internship"};
+        ArrayAdapter<String> natureAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, natureOptions);
+        natureAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerNature.setAdapter(natureAdapter);
+
+        // Apply Filter Button with validation
+        applyFilterButton.setOnClickListener(v -> {
+            String location = etLocation.getText().toString().trim();
+            String sortBy = spinnerSort.getSelectedItem().toString();
+            String jobNature = spinnerNature.getSelectedItem().toString();
+
+            if (TextUtils.isEmpty(location)) {
+                etLocation.setError("Please enter location");
+                etLocation.requestFocus();
+                return;
+            }
+
+            if (TextUtils.isEmpty(sortBy)) {
+                Toast.makeText(this, "Please select sort option", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (TextUtils.isEmpty(jobNature)) {
+                Toast.makeText(this, "Please select job nature", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Navigate to UserHomePageActivity after validation
+            Intent intent = new Intent(SearchFilterActivity.this, UserHomePageActivity.class);
+            // Optionally pass the filter data
+            intent.putExtra("location", location);
+            intent.putExtra("sortBy", sortBy);
+            intent.putExtra("jobNature", jobNature);
             startActivity(intent);
-            finish();
         });
 
-        // ♻️ Reset filters to default
-        binding.resetFilterButton.setOnClickListener(v -> {
-            binding.spinnerLocation.setSelection(0);
-            binding.spinnerSort.setSelection(0);
-            binding.spinnerNature.setSelection(0);
-            Toast.makeText(this, "Filters reset!", Toast.LENGTH_SHORT).show();
-        });
-
-        // ✅ Apply filters and send to RecruiterHomePageActivity
-        binding.applyFilterButton.setOnClickListener(v -> {
-            String location = binding.spinnerLocation.getSelectedItem().toString();
-            String sort = binding.spinnerSort.getSelectedItem().toString();
-            String nature = binding.spinnerNature.getSelectedItem().toString();
-
-            Intent intent = new Intent(SearchFilterActivity.this, RecruiterHomePageActivity.class);
-            intent.putExtra("filter_location", location);
-            intent.putExtra("filter_sort", sort);
-            intent.putExtra("filter_nature", nature);
-
-            Toast.makeText(this, "Filter Applied:\n" + location + ", " + sort + ", " + nature, Toast.LENGTH_SHORT).show();
-            startActivity(intent);
-            finish();
-        });
+        // Reset Button
+        resetFilterButton.setOnClickListener(v -> resetFilters());
     }
 
-    private void setupSpinner(Spinner spinner, String[] items) {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        spinner.setAdapter(adapter);
+    private void resetFilters() {
+        etLocation.setText("");
+        spinnerSort.setSelection(0);
+        spinnerNature.setSelection(0);
     }
 }
